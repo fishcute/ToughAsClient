@@ -13,7 +13,7 @@ If you wanted a red umbrella, you would rename a red banner "Red Umbrella", and 
 - UV Sterilizer, minecraft:comparator
 - Water Testing Kit, minecraft:observer
 - Thermometer, minecraft:glass_bottle
-- (color) Umbrella, minecraft:(color)_umbrella
+- (color) Umbrella, minecraft:(color)_banner
 - (color) Fan, minecraft:(color)_carpet
 
 **More items may be added in the future**
