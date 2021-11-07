@@ -8,4 +8,6 @@ Usage: Right click on a 1x1x1 source of water. If the player moves further than 
 
 While the UV sterilizer is being used, sparkle particles will be displayed, and the player will swing their main hand.
 
+*The player using the UV sterilizer, as shown below*
+
 ![2021-11-07_15 42 52](https://user-images.githubusercontent.com/47741160/140661285-bde4f33f-5ba9-4e48-b415-8caf8c2d6869.png)
