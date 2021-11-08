@@ -13,6 +13,8 @@ There are a few ways to decrease stamina:
 
 Stamina will regenerate over time without the requirement of player action. Holding shift will regenerate stamina faster. Having the strength effect will make the player regenerate stamina even faster. If the player has the speed effect applied, the player will not lose stamina by sprinting.
 
+When the player reaches the [last stage](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Stamina.md#stages), the player will recieve a [status message](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Miscellaneous/Status%20Message.md) informing them they are too tired to continue running.
+
 ### Stages
 
 There are three different stages in the stamina bar, as seen below:
