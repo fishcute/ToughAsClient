@@ -2,7 +2,7 @@
 
 ![darkness](https://user-images.githubusercontent.com/47741160/140668809-9090182c-ad3d-4ac3-aca7-ae071fd5e32a.png)
 
-Darkness will temporarily darken the player's brightness
+Darkness will temporarily darken the player's brightness. Inspired by the 1.19 Deep Dark.
 
 This effect can be given when the player has [Insanity](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Insanity.md)
 
