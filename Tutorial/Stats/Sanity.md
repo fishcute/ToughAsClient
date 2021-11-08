@@ -17,6 +17,8 @@ And a few ways to increase sanity:
 - Being near a [comforting entity](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Sanity.md#comforting-entities)
 - Being in a light level above 5
 
+When the player's sanity goes below 5, [insanity](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Insanity.md) will be applied.
+
 ### The Sanity Bar
 
 The sanity bar will display your current sanity. Unlike [stamina](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Stamina.md), [temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Temperature.md), and [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md), the sanity bar is not always displayed. Sanity will not go down if the bar is not displayed.
