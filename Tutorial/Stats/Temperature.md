@@ -8,6 +8,7 @@ Some environmental factors that affect temperature:
 - Light level
 - If player is in water/rain
 - If player is standing on ice/snow
+
 Some physical factors that affect temperature:
 - The player's armor
 - If the player has [hypothermia](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Hypothermia.md) effect
