@@ -2,7 +2,7 @@
 
 Status messages are used to inform the player of something.
 
-When a status message is played, it will be shown above your right bars ([Thirst](https://github.com/fishcute/ToughAsClient/blob/main/tutorial/stats/Thirst.md), [Stamina](https://github.com/fishcute/ToughAsClient/blob/main/tutorial/stats/Stamina.md), and [Temperature](https://github.com/fishcute/ToughAsClient/blob/main/tutorial/stats/Temperature.md) by default)
+When a status message is played, it will be shown above your right bars ([Thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md), [Stamina](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Stamina.md), and [Temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Temperature.md) by default)
 
 Status messages can inform the player if they are thirsty, tired, cold/hot, and other things.
 
