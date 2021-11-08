@@ -2,14 +2,14 @@
 
 Temperature is calculated by various variables, such as environmental temperature, and light level.
 
-Some environmental factors that affect temperature:
+Some environmental factors that affects temperature:
 - Biome temperature
 - Daylight
 - Light level
 - If player is in water/rain
 - If player is standing on ice/snow
 
-Some physical factors that affect temperature:
+Some physical factors that affects temperature:
 - The player's armor
 - If the player has [hypothermia](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Hypothermia.md) effect
 - If the player is [drenched](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Drenched.md)
