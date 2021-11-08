@@ -11,6 +11,8 @@ Having the [refreshed](https://github.com/fishcute/ToughAsClient/blob/main/Tutor
 
 When the player's thirst goes below 15, the player will recieve the [dehydration](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Dehydration.md) effect.
 
+Some effects that will decrease the player's thirst are [dysentery](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Dysentery.md) and [hypernatremia](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Status%20Effects/Hypernatremia.md).
+
 ### Water altering foods
 Some foods that alter the player's water level are:
 - All stews/soups (+50)
