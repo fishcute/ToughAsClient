@@ -1,7 +1,5 @@
 # Sanity
 
-Sanity is one of the more complicated features presented in Tough as Client.
-
 Sanity will decrease and increase depending on the environmental conditions of your player.
 
 There are a few ways to decrease sanity:
