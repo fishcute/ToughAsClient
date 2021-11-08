@@ -14,4 +14,4 @@ This effect will be applied when the player's [sanity](https://github.com/fishcu
 
 *Something is watching...*
 
-
+![2021-11-07_20 12 37](https://user-images.githubusercontent.com/47741160/140669937-3042f8fc-e5f4-4cd4-958b-9997e00a3e39.png)
