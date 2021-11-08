@@ -27,6 +27,6 @@ The second stage, or the middle/orange stage, has slower regeneration than the f
 
 The third/last stage, or the leftmost/red stage, has the slowest regeneration of all the stages, and is the smallest of all stages. In this stage, the player is forced into sneaking, slowing the player down. The player's FOV will decrease by a larger amount. This stage makes up for 13% of the bar.
 
-*The stamina bar in the middle, located to the right bottom of the screen*
+*The stamina bar in the middle of the three primary bars by default, located to the right bottom of the screen*
 
 ![2021-11-08_16 11 48](https://user-images.githubusercontent.com/47741160/140820056-e3c0c8f3-23c2-472c-a428-6ae55778cf1b.png)
