@@ -28,7 +28,7 @@ Conditions to display sanity bar:
 - Player is underground
 - Current moon phase is new moon during the night
 
-*The sanity bar, left of the hotbar*
+*The sanity bar, in the bottom left of the screen*
 
 ![2021-11-08_14 40 34](https://user-images.githubusercontent.com/47741160/140811358-6c25b717-9e32-4794-ab62-0647540df833.png)
 
