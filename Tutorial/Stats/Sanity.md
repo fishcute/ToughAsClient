@@ -13,7 +13,7 @@ There are a few ways to decrease sanity:
 - Having hunger below 10
 - Having [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md) below 22
 And a few ways to increase sanity:
-- Being near a comforting entity
+- Being near a [comforting entity](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Sanity.md#comforting-entities)
 
 
 
