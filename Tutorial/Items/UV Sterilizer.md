@@ -1,6 +1,6 @@
 # UV Sterilizer
 
-The UV Sterilizer can create [Cleaned Water](https://github.com/fishcute/ToughAsClient/blob/main/tutorial/Cleaned%20Water.md) when used.
+The UV Sterilizer can create [Cleaned Water](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Miscellaneous/Cleaned%20Water.md) when used.
 
 ID: *UV Sterilizer, minecraft:comparator*
 
