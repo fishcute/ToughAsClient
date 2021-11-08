@@ -19,11 +19,11 @@ There are three different stages in the stamina bar, as seen below:
 
 ![bar](https://user-images.githubusercontent.com/47741160/140820216-b091ba0d-a8aa-4140-8829-8683e374f8ba.png)
 
-The first stage, or the leftmost/yellow stage, has the fastest regeration of all stages. In this stage, the player does not recieve any debuffs.
+The first stage, or the rightmost/yellow stage, has the fastest regeration of all stages, and is the largest of all stages. In this stage, the player does not recieve any debuffs.
 
 The second stage, or the middle/orange stage, has slower regeneration than the first stage. In this stage, the player cannot sprint. The player's FOV will also decrease.
 
-The third/last stage, or the rightmost/red stage, has the slowest regeneration of all the stages. In this stage, the player is forced into sneaking, slowing the player down. The player's FOV will decrease by a larger amount.
+The third/last stage, or the leftmost/red stage, has the slowest regeneration of all the stages, and is the smallest of all stages. In this stage, the player is forced into sneaking, slowing the player down. The player's FOV will decrease by a larger amount.
 
 *The stamina bar in the middle, located to the right bottom of the screen*
 
