@@ -13,9 +13,18 @@ There are a few ways to decrease sanity:
 - Having hunger below 10
 - Having [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md) below 22
 And a few ways to increase sanity:
+- Being above ground
 - Being near a [comforting entity](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Sanity.md#comforting-entities)
+- Being in a light level above 5
 
+### The Sanity Bar
 
+The sanity bar will display your current sanity. Unlike [stamina](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Stamina.md), [temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Temperature.md), and [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md), the sanity bar is not always displayed. Sanity will not go down if the bar is not displayed.
+Conditions to display sanity bar:
+- Sanity is below 82
+- Player's y level is below 30
+- Player is underground
+- Current moon phase is new moon during the night
 
 ### Comforting Entities
 Comforting entities are entity types that will increase the player's sanity if the player is near the entity type, and can see the entity type.
