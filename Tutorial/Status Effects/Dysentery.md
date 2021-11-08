@@ -2,7 +2,7 @@
 
 ![dysentery](https://user-images.githubusercontent.com/47741160/140668984-3428b13c-dd06-4e1c-8263-d519e8f88c31.png)
 
-Dysentery will drop the player's [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md) faster. The player will also occasionally throw up, putting the player into sneak position.
+Dysentery will drop the player's [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md) faster. The player will also occasionally throw up, putting the player into sneak position. Your water bar will turn greenish-blue when this effect is active.
 
 This effect can be acquired by drinking unsanitary water ([Water types](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Miscellaneous/Water%20Types.md))
 
