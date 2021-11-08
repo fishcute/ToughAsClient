@@ -4,7 +4,7 @@
 
 Hyperthermia will force the player to drop their items if they hold them for too long. A [status message](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Miscellaneous/Status%20Message.md) will be sent to the player.
 
-This effect will be applied when the player's [temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Temperature.md) goes above 74°. If the player's temperature goes below 60 and 40, the remaining time will go down faster.
+This effect will be applied when the player's [temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Temperature.md) goes above 74°. If the player's temperature goes below 60° and 40°, the remaining time will go down faster.
 
 *The player dropping an item*
 
