@@ -28,6 +28,10 @@ Conditions to display sanity bar:
 - Player is underground
 - Current moon phase is new moon during the night
 
+*The sanity bar, left of the hotbar*
+
+![2021-11-08_14 40 34](https://user-images.githubusercontent.com/47741160/140811358-6c25b717-9e32-4794-ab62-0647540df833.png)
+
 ### Comforting Entities
 Comforting entities are entity types that will increase the player's sanity if the player is near the entity type, and can see the entity type.
 These entities consists of:
