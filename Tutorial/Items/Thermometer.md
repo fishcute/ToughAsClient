@@ -1,6 +1,6 @@
 # Thermometer
 
-The thermometer will show your [immediate temperature](https://github.com/fishcute/ToughAsClient/blob/main/tutorial/Immediate%20Temperature.md).
+The thermometer will show your [immediate temperature](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Immediate%20Temperature.md).
 
 Possible temperatures:
 - Freezing
