@@ -1,1 +1,33 @@
-WIP
+# Sanity
+
+Sanity is one of the more complicated features presented in Tough as Client.
+
+Sanity will decrease and increase depending on the environmental conditions of your player.
+
+There are a few ways to decrease sanity:
+- Staying underground
+- Being above ground during a new moon
+- Being in light level less than 3
+- Being too cold or too hot
+- Having health below 10
+- Having hunger below 10
+- Having [thirst](https://github.com/fishcute/ToughAsClient/blob/main/Tutorial/Stats/Thirst.md) below 22
+And a few ways to increase sanity:
+- Being near a comforting entity
+
+
+
+### Comforting Entities
+Comforting entities are entity types that will increase the player's sanity if the player is near the entity type, and can see the entity type.
+These entities consists of:
+- Wolves
+- Cats
+- Foxes
+- Villagers
+- Wandering traders
+- Iron golems
+- Players
+
+*Comfort particles around a wolf*
+
+![2021-11-08_14 54 43](https://user-images.githubusercontent.com/47741160/140808809-7d35d5ab-106e-4516-b241-f6adc1976069.png)
