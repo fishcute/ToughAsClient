@@ -1,6 +1,6 @@
 # Survival Tutorial
 
-I can't afford GitHub Pro so use this for now
+Moving this over to wiki...
 
 ## Getting started
 
