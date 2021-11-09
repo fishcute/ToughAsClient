@@ -3,4 +3,4 @@
 # Tough as Client
 *A client-side survival mod for Minecraft*
 
-# Mod is WIP, will be released soon!
+View the wiki [here](https://github.com/fishcute/ToughAsClient/wiki).
