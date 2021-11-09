@@ -7,3 +7,5 @@ Some features that may/may not be added in the future are:
 - Temperature based off of y level
 - Server to Client networking (Kicks player if they don't have Tough as Client installed)
 - (Maybe) Serene seasons support, or some sort of client side seasons (Most likely in a seperate mod)
+
+### Please suggest more ideas!
