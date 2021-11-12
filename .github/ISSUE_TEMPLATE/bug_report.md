@@ -7,7 +7,6 @@ assignees: ''
 ---
 
 # Bug Report
-Please format your bug report similar to the following:
 
 ### What went wrong: 
 [Describe what went wrong as clearly as possible]
