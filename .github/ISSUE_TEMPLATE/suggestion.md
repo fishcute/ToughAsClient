@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 # Suggestion
-Please make sure that your suggestion is not already on the [upcoming features](https://github.com/fishcute/ToughAsClient/wiki/Upcoming-Features) list!
+Please make sure that your suggestion is not already on the [upcoming features](https://github.com/fishcute/ToughAsClient/wiki/Upcoming-Features-and-Known-Issues#upcoming-features) list!
 
 ### Your suggestion
 [Put your suggestion here, describe it as well as you can]
