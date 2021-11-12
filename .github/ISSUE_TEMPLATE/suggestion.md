@@ -7,9 +7,6 @@ assignees: ''
 ---
 
 # Suggestion
-
-If you need assistance, join the [discord](https://discord.com/channels/908511637877719060/908512308534341663) or view the [wiki](https://github.com/fishcute/ToughAsClient/wiki).
-
 Please make sure that your suggestion is not already on the [upcoming features](https://github.com/fishcute/ToughAsClient/wiki/Upcoming-Features) list!
 
 Please format your suggestion similar to the following:
