@@ -8,6 +8,8 @@ assignees: ''
 
 # Bug Report
 
+Please make sure that your bug report is not already on the [known issues](https://github.com/fishcute/ToughAsClient/wiki/Upcoming-Features-and-Known-Issues#known-issues) list!
+
 ### What went wrong: 
 [Describe what went wrong as clearly as possible]
 ### How to reproduce this bug
