@@ -7,9 +7,6 @@ assignees: ''
 ---
 
 # Bug Report
-
-If you need assistance, join the [discord](https://discord.com/channels/908511637877719060/908512308534341663) or view the [wiki](https://github.com/fishcute/ToughAsClient/wiki).
-
 Please format your bug report similar to the following:
 
 ### What went wrong: 
