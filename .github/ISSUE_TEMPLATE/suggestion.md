@@ -9,8 +9,6 @@ assignees: ''
 # Suggestion
 Please make sure that your suggestion is not already on the [upcoming features](https://github.com/fishcute/ToughAsClient/wiki/Upcoming-Features) list!
 
-Please format your suggestion similar to the following:
-
 ### Your suggestion
 [Put your suggestion here, describe it as well as you can]
 ### Why this is a good idea
