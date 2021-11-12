@@ -10,14 +10,14 @@ assignees: ''
 Please format your bug report similar to the following:
 
 ### What went wrong: 
-*[Describe what went wrong as clearly as possible]*
+[Describe what went wrong as clearly as possible]
 ### How to reproduce this bug
-*[How to reproduce the bug you are reporting]*
+[How to reproduce the bug you are reporting]
 ### Version of Minecraft/Fabric
-*[Put the version of Minecraft/fabric you were using]*
+[Put the version of Minecraft/fabric you were using]
 ### Version of mod
-*[Put the version of Tough as Client you were using]*
+[Put the version of Tough as Client you were using]
 ### Logs
-*[Put logs here]*
+[Put logs here]
 ### What went wrong *(Optional)*
-*[If you want to share what you think might've went wrong, feel free to put it here]*
+[If you want to share what you think might've went wrong, feel free to put it here]
