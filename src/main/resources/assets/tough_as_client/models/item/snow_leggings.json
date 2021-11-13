@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+	"layer0": "tough_as_client:item/blank",
+    "layer1": "tough_as_client:item/snow_leggings"
+  }
+}

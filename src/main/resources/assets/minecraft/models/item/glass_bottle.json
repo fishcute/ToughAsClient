@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/glass_bottle"
+  },
+ "overrides": [
+ {"predicate": {"custom_model_data":1}, "model": "tough_as_client:item/thermometer_1"},
+ {"predicate": {"custom_model_data":2}, "model": "tough_as_client:item/thermometer_2"},
+ {"predicate": {"custom_model_data":3}, "model": "tough_as_client:item/thermometer_3"},
+ {"predicate": {"custom_model_data":4}, "model": "tough_as_client:item/thermometer_4"},
+ {"predicate": {"custom_model_data":5}, "model": "tough_as_client:item/thermometer_5"},
+ {"predicate": {"custom_model_data":6}, "model": "tough_as_client:item/thermometer_6"},
+ {"predicate": {"custom_model_data":7}, "model": "tough_as_client:item/thermometer_7"},
+ {"predicate": {"custom_model_data":8}, "model": "tough_as_client:item/thermometer_8"}
+ ]
+}

@@ -1,0 +1,29 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "tough_as_client:item/fan/purple_fan"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-2, 132, -68],
+			"translation": [-2.25, 5.25, -1.75],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-2, 132, 28],
+			"translation": [-2.25, 5.25, -1.75],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"firstperson_righthand": {
+			"rotation": [66, 127, -135],
+			"translation": [-0.25, 5.25, -1.75],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"firstperson_lefthand": {
+			"rotation": [66, 127, -61],
+			"translation": [-0.25, 5.25, -1.75],
+			"scale": [0.9, 0.9, 0.9]
+		}
+	}
+}

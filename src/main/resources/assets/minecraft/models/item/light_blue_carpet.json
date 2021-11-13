@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/light_blue_carpet",
+ "overrides": [
+ {"predicate": {"custom_model_data":1}, "model": "tough_as_client:item/fan/light_blue_fan"}
+ ]
+}

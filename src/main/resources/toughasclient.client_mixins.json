@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "fishcute.toughasclient.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "ScreenFOVMixin",
+    "ItemRendererMixin",
+    "ArmorFeatureRendererMixin",
+    "PlayerMovementMixin",
+    "ItemMixin",
+    "PotionItemMixin",
+    "MinecraftClientMixin",
+    "CapeFeatureRenderMixin",
+    "AbstractClientPlayerEntityMixin",
+    "LevelStorageMixin",
+    "MultiplayerScreenMixin",
+    "ReloadableResourceManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
