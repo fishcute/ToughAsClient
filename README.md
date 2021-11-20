@@ -4,3 +4,5 @@
 *A client-side survival mod for Minecraft*
 
 View the wiki [here](https://github.com/fishcute/ToughAsClient/wiki).
+
+Curseforge page is [here](https://www.curseforge.com/minecraft/mc-mods/tough-as-client).
