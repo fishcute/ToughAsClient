@@ -85,7 +85,7 @@ public class InsanityOverlay {
         }
     }
     static float step() {
-        //Professional coding at it's best
+        //Professional coding at its best
         float current = Math.abs(watcherAnimation);
         int i = Math.round(current);
         if (i>5)
