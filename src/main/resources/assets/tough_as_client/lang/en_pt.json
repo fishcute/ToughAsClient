@@ -24,13 +24,13 @@
 	"tough_as_client.item.water_testing_kit.lore.normal" : "few risks o' toxicness",
 	"tough_as_client.item.water_testing_kit.lore.sanitary" : "nay risks",
 	
-	"tough_as_client.message.uv_sterilizer.water_cleaned" : "Yer sea's been cleaned",
-	"tough_as_client.message.uv_sterilizer.water_already_cleaned" : "Yer seas's aleady been cleaned!",
+	"tough_as_client.message.uv_sterilizer.water_cleaned" : "Yer sea be cleaned!",
+	"tough_as_client.message.uv_sterilizer.water_already_cleaned" : "Yer sea be aleady been cleaned!",
 	"tough_as_client.message.uv_sterilizer.water_too_large" : "Yer sea is too large!",
 	"tough_as_client.message.water_testing_kit.sanitary" : "Yer water has nay risks!",
 	"tough_as_client.message.water_testing_kit.normal" : "Yer water has some risks o' toxicness!",
 	"tough_as_client.message.water_testing_kit.swamp" : "Yer water be toxic!",
-	"tough_as_client.message.water_testing_kit.ocean" : "This be th' ocean!",
+	"tough_as_client.message.water_testing_kit.ocean" : "This be ocean!",
 	
 	"tough_as_client.message.tired" : "Yer been sailin' too much",
 	"tough_as_client.message.thirsty" : "Yer need some rum",
@@ -53,7 +53,7 @@
 	"tough_as_client.effect.hypernatremia" : "Seasalt",
 	"tough_as_client.effect.hyperthermia" : "Flames",
 	"tough_as_client.effect.hypothermia" : "Frost",
-	"tough_as_client.effect.insanity" : "Th' Gods' Curse",
+	"tough_as_client.effect.insanity" : "Gods Curse",
 	"tough_as_client.effect.refreshed" : "Freshness",
 	"tough_as_client.effect.thirst" : "Marooned",
 	
