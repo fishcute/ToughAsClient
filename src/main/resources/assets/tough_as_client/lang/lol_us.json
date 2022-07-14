@@ -1,12 +1,22 @@
 {
 	"tough_as_client.armor.snow_armor.description" : "Maeks u warm",
 	"tough_as_client.armor.running_shoes.description" : "make you runz less tired",
+	"tough_as_client.armor.cooling_armor.description" : "kan keep u coooool with frozen water",
+	"tough_as_client.armor.goggles_revealing.description" : "u can see stufz",
+	"tough_as_client.armor.goggles_revealing.cannot_use" : "bruh stupid glases no work!",
 	
 	"tough_as_client.item.fan.description" : "Kuhlz you duwn",
 	"tough_as_client.item.thermometer.description" : "i nedz a doktor",
 	"tough_as_client.item.umbrella.description" : "STOPS SKY WATERZ FRUM ENCHANTING U",
 	"tough_as_client.item.uv_sterilizer.description" : "maek water no dirte",
 	"tough_as_client.item.water_testing_kit.description" : "Can I drinkt dis water?",
+	"tough_as_client.item.cursed_lantern.lore" : "this ting look stupid",
+	"tough_as_client.item.cursed_lantern.description" : "u can be cool but you go crazee!",
+	"tough_as_client.item.ice_pack.description" : "keps ur hand cool",
+
+	"tough_as_client.item.ice_pack.tier.ice" : "this frozen water no good",
+	"tough_as_client.item.ice_pack.tier.packed_ice" : "frozen water but better i gues",
+	"tough_as_client.item.ice_pack.tier.blue_ice" : "BIG BLU",
 	
 	"tough_as_client.item.thermometer.lore" : "majik glas stik temperture iz %s",
 	"tough_as_client.item.thermometer.lore.1" : "BRRRRRRRRRRR",

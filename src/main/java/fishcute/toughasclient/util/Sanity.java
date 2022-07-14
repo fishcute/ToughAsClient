@@ -2,6 +2,8 @@ package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.ClientInit;
 import fishcute.toughasclient.DataManager;
+import fishcute.toughasclient.items.ClientItemRegistry;
+import fishcute.toughasclient.items.CursedLantern;
 import fishcute.toughasclient.status_effect.ClientStatusEffects;
 import fishcute.toughasclient.status_effect.Darkness;
 import fishcute.toughasclient.status_effect.Insanity;
@@ -28,8 +30,14 @@ public class Sanity {
         comfort();
         correct();
         update();
-        if (DataManager.sanity<5)
+        if (DataManager.sanity <= 40 && DataManager.sanity > 30)
             StatusEffectManager.addStatusEffect(new Insanity(Utils.secondsToTicks(26), 0));
+        else if (DataManager.sanity <= 30 && DataManager.sanity > 20)
+            StatusEffectManager.addStatusEffect(new Insanity(Utils.secondsToTicks(26), 1));
+        else if (DataManager.sanity <= 20 && DataManager.sanity > 10)
+            StatusEffectManager.addStatusEffect(new Insanity(Utils.secondsToTicks(26), 2));
+        else if (DataManager.sanity <= 10)
+            StatusEffectManager.addStatusEffect(new Insanity(Utils.secondsToTicks(26), 3));
     }
     static void correct() {
         if (DataManager.sanity>82)
@@ -46,8 +54,8 @@ public class Sanity {
     public static float sanityOverlayStatus() {
         int sanity = DataManager.sanity;
         float percent = 0;
-        if (sanity<=32)
-            percent = ((sanity / 32f) - 1);
+        if (sanity<=48)
+            percent = ((sanity / 48f) - 1);
 
         return percent;
     }
@@ -57,7 +65,7 @@ public class Sanity {
         if (!day()&&isNewMoon()&&!Utils.underground()) {
             posTrend = false;
         }
-        else if (!isNewMoon()&&!Utils.underground()) {
+        else if (!isNewMoon()&&!Utils.underground() && !ClientItemRegistry.isHoldingItem(new CursedLantern())) {
             DataManager.sanity++;
             return 100;
         }
@@ -87,7 +95,10 @@ public class Sanity {
             posTrend = true;
             wait = 280;
         }
-
+        if (ClientItemRegistry.isHoldingItem(new CursedLantern())) {
+            posTrend = false;
+            wait -= 40;
+        }
         if (posTrend)
             DataManager.sanity++;
         else
@@ -124,11 +135,16 @@ public class Sanity {
         return (e.equals(EntityType.WOLF)||e.equals(EntityType.CAT)||e.equals(EntityType.FOX)||e.equals(EntityType.VILLAGER)||e.equals(EntityType.WANDERING_TRADER)||e.equals(EntityType.PLAYER)||e.equals(EntityType.IRON_GOLEM));
     }
     public static boolean shouldShow() {
-        return (e().getY()<30||(lightLevel()<5&&Utils.underground())||DataManager.sanity<82||isNewMoon());
+        return (e().getY()<30||(lightLevel()<5&&Utils.underground())||DataManager.sanity<82||isNewMoon()||ClientItemRegistry.isHoldingItem(new CursedLantern()));
     }
     static void insanityEffects() {
         if (!StatusEffectManager.contains(ClientStatusEffects.DARKNESS)&&StatusEffectManager.contains(ClientStatusEffects.INSANITY)&&Math.random()>0.995)
-            StatusEffectManager.addStatusEffect(new Darkness(Utils.secondsToTicks(26), 0));
+            if (StatusEffectManager.getStatusEffectAmplifier(ClientStatusEffects.INSANITY) == 1)
+                StatusEffectManager.addStatusEffect(new Darkness(Utils.secondsToTicks(11), 0));
+            else if (StatusEffectManager.getStatusEffectAmplifier(ClientStatusEffects.INSANITY) == 2)
+                StatusEffectManager.addStatusEffect(new Darkness(Utils.secondsToTicks(19), 0));
+            else if (StatusEffectManager.getStatusEffectAmplifier(ClientStatusEffects.INSANITY) > 2)
+                StatusEffectManager.addStatusEffect(new Darkness(Utils.secondsToTicks(26), 0));
     }
     static boolean day() {
         return world().getTimeOfDay()<=13000;

@@ -1,7 +1,7 @@
 package fishcute.toughasclient.mixin;
 
-import fishcute.toughasclient.custom_armor.CustomArmorRegistry;
-import fishcute.toughasclient.custom_armor.ICustomArmor;
+import fishcute.toughasclient.armor.ClientArmorRegistry;
+import fishcute.toughasclient.armor.IClientArmor;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import org.spongepowered.asm.mixin.Mixin;
@@ -44,8 +44,8 @@ public abstract class ArmorFeatureRendererMixin<T extends LivingEntity, M extend
     }
     @Inject(at = @At("HEAD"), method = "getArmorTexture", cancellable = true)
     private void getArmorTexture(ArmorItem armorItem, boolean bl, String string, CallbackInfoReturnable<Identifier> info) {
-        if (CustomArmorRegistry.isCustomArmor(cachedStack)&&cachedStack.getTag()!=null) {
-            ICustomArmor i = CustomArmorRegistry.valueOf(cachedStack);
+        if (ClientArmorRegistry.isCustomArmor(cachedStack)&&cachedStack.getTag()!=null) {
+            IClientArmor i = ClientArmorRegistry.valueOf(cachedStack);
             if (bl)
                 info.setReturnValue(i.layerTwoIdentifier());
             else

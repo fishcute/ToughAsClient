@@ -1,6 +1,10 @@
 package fishcute.toughasclient.status_effect;
 
 import fishcute.toughasclient.ClientInit;
+import fishcute.toughasclient.items.BlueIcePack;
+import fishcute.toughasclient.items.ClientItemRegistry;
+import fishcute.toughasclient.items.IcePack;
+import fishcute.toughasclient.items.PackedIcePack;
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.DataManager;
 import fishcute.toughasclient.status_message.StatusMessage;
@@ -8,6 +12,7 @@ import fishcute.toughasclient.util.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -32,8 +37,8 @@ public class Hyperthermia extends IClientStatusEffect {
     }
     @Override
     public void tick() {
-        if (ClientUtils.client().player.inventory.selectedSlot!=previousSlot)
-            dropTick = 200;
+        if (ClientUtils.client().player.inventory.selectedSlot!=this.previousSlot)
+            this.dropTick = 200;
         if (this.messageTick>0)
             this.messageTick--;
         if (this.dropTick>0&&shouldDropItem())
@@ -46,7 +51,7 @@ public class Hyperthermia extends IClientStatusEffect {
             this.messageTick = 40;
             this.dropTick = 200;
         }
-        previousSlot = ClientUtils.client().player.inventory.selectedSlot;
+        this.previousSlot = ClientUtils.client().player.inventory.selectedSlot;
         if (DataManager.temperature<60)
             this.ticks--;
         if (DataManager.temperature<40)
@@ -69,8 +74,10 @@ public class Hyperthermia extends IClientStatusEffect {
     }
     static boolean shouldDropItem() {
         ItemStack i = (ItemStack) ((ArrayList) ClientUtils.e().getItemsHand()).get(0);
-        return (!i.getTranslationKey().equals("block.minecraft.air")&&
-                !i.getTranslationKey().contains("snow")&&
-                !i.getTranslationKey().contains("ice"));
+        return !(i.equals(Items.SNOW) || i.equals(Items.SNOW_BLOCK) || i.equals(Items.SNOWBALL)
+                || i.equals(Items.ICE) || i.equals(Items.PACKED_ICE) || i.equals(Items.BLUE_ICE)
+                || ClientItemRegistry.isHoldingItem(new IcePack())
+                || ClientItemRegistry.isHoldingItem(new PackedIcePack())
+                || ClientItemRegistry.isHoldingItem(new BlueIcePack()));
     }
 }

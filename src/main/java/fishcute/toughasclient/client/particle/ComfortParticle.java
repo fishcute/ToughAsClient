@@ -16,18 +16,18 @@ import net.minecraft.particle.ParticleTypes;
 @Environment(EnvType.CLIENT)
 public class ComfortParticle extends SpriteBillboardParticle {
 	private final SpriteProvider spriteProvider;
-	protected ComfortParticle(ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, SpriteProvider spriteProvider) {
+	protected ComfortParticle(ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, SpriteProvider provider) {
 		super(clientWorld, x, y, z, vx, vy, vz);
-		this.spriteProvider = spriteProvider;
-		this.setBoundingBoxSpacing((float) 0.2, (float) 0.2);
-		this.scale *= (float) 1;
-		this.maxAge = 24;
-		this.gravityStrength = (float) -.05;
-		this.collidesWithWorld = false;
-		this.velocityX = vx * 1;
-		this.velocityY = vy * 1;
-		this.velocityZ = vz * 1;
-		this.setSprite(spriteProvider);
+		spriteProvider = provider;
+		setBoundingBoxSpacing((float) 0.2, (float) 0.2);
+		scale *= (float) 1;
+		maxAge = 24;
+		gravityStrength = (float) -.05;
+		collidesWithWorld = false;
+		velocityX = vx * 1;
+		velocityY = vy * 1;
+		velocityZ = vz * 1;
+		setSprite(spriteProvider);
 	}
 
 	@Override
@@ -47,13 +47,13 @@ public class ComfortParticle extends SpriteBillboardParticle {
 	@Environment(EnvType.CLIENT)
 	public static class CustomParticleFactory implements ParticleFactory<DefaultParticleType> {
 		private final SpriteProvider spriteProvider;
-		public CustomParticleFactory(SpriteProvider spriteProvider) {
-			this.spriteProvider = spriteProvider;
+		public CustomParticleFactory(SpriteProvider provider) {
+			spriteProvider = provider;
 		}
 
 		public Particle createParticle(DefaultParticleType typeIn, ClientWorld worldIn, double x, double y, double z, double xSpeed, double ySpeed,
 				double zSpeed) {
-			return new ComfortParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteProvider);
+			return new ComfortParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, spriteProvider);
 		}
 	}
 }

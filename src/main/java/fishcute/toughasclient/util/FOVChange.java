@@ -11,16 +11,16 @@ public class FOVChange {
     String identifier;
 
     public String getIdentifier() {
-        return this.identifier;
+        return identifier;
     }
     public float getChange() {
-        return this.change;
+        return change;
     }
 
     public static ArrayList<FOVChange> list = new ArrayList<>();
     public FOVChange(float f, String id) {
-        this.identifier = id;
-        this.change = f;
+        identifier = id;
+        change = f;
     }
     public static void addChange(FOVChange f) {
         if (containsChange(f.getIdentifier()))

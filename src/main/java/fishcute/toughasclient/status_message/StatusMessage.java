@@ -1,5 +1,6 @@
 package fishcute.toughasclient.status_message;
 
+import fishcute.toughasclient.ToughAsClientMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -30,7 +31,7 @@ public class StatusMessage {
         this.totalDuration = duration;
     }
     public void play() {
-        this.assign();
+        assign();
     }
     public static void tickAll() {
         if (msg.size()>0) {
@@ -92,7 +93,7 @@ public class StatusMessage {
     }
     public int colorFade() {
         if (this.duration!=0)
-            return color();
+            return this.color();
         if (this.endTick<=this.totalDuration/50+1)
             return -99999;
         int color = this.color();

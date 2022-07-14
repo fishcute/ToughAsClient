@@ -1,6 +1,8 @@
 package fishcute.toughasclient.status_effect;
 
 import fishcute.toughasclient.ClientInit;
+import fishcute.toughasclient.armor.ClearsightSpectacles;
+import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.util.Utils;
 import fishcute.toughasclient.client.InsanityOverlay;
@@ -39,29 +41,30 @@ public class Insanity extends IClientStatusEffect {
     }
     @Override
     public void playParticle() {
-        Utils.surroundParticle(this.particleType(), MinecraftClient.getInstance().player, 0.999, 0.5);
+        Utils.surroundParticle(particleType(), MinecraftClient.getInstance().player, 0.999, 0.5);
     }
     @Override
     public void tick() {
-        if (Math.random()>0.995)
+        if (Math.random() > 0.995 && this.amplifier > 2)
             attemptSwapHands();
-        if (Math.random()>0.99)
+        if (Math.random() > 0.99 && this.amplifier > 2)
             hotbarSlot();
-        this.mood++;
-        if (!InsanityOverlay.active()&&Math.random()>0.9995)
+        if (!InsanityOverlay.active() && Math.random()>0.9995 && this.amplifier > 2 && !ClearsightSpectacles.hasAffect)
             watch();
 
-        if (this.mood>=this.duration) {
-            this.message();
+        this.mood++;
+
+        if (this.mood >= this.duration) {
+            message();
             this.mood = 0;
             this.duration = (int) (2000 + (Math.random()*3000));
             sound();
         }
-        if (Math.random()>0.999)
+        if (Math.random()>0.9995)
             sound();
         randomMovement();
 
-        if (noLightMessageTick>0)
+        if (noLightMessageTick > 0)
             noLightMessageTick--;
     }
     public void attemptSwapHands() {
@@ -108,15 +111,29 @@ public class Insanity extends IClientStatusEffect {
     void message() {
         int a = new Random().nextInt(10);
         switch (a) {
-            case 1: new StatusMessage(Utils.translate("tough_as_client.message.insane.1"), 400, 100, 4793925).play();
-            case 2: new StatusMessage(Utils.translate("tough_as_client.message.insane.2"), 400, 100, 4793925).play();
-            case 3: new StatusMessage(Utils.translate("tough_as_client.message.insane.3"), 400, 100, 4793925).play();
-            case 4: new StatusMessage(Utils.translate("tough_as_client.message.insane.4"), 400, 100, 4793925).play();
-            case 5: new StatusMessage(Utils.translate("tough_as_client.message.insane.5"), 400, 100, 4793925).play();
-            case 6: new StatusMessage(Utils.translate("tough_as_client.message.insane.6"), 400, 100, 4793925).play();
+            case 1:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.1"), 400, 100, 4793925).play();
+                break;
+            case 2:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.2"), 400, 100, 4793925).play();
+                break;
+            case 3:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.3"), 400, 100, 4793925).play();
+                break;
+            case 4:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.4"), 400, 100, 4793925).play();
+                break;
+            case 5:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.5"), 400, 100, 4793925).play();
+                break;
+            case 6:
+                new StatusMessage(Utils.translate("tough_as_client.message.insane.6"), 400, 100, 4793925).play();
+                break;
             case 7:
             case 8:
-            case 9: new StatusMessage(generate(), 400, 100, 4793925).play();
+            case 9:
+                new StatusMessage(generate(), 400, 100, 4793925).play();
+                break;
         }
     }
 
@@ -163,11 +180,11 @@ public class Insanity extends IClientStatusEffect {
     public static boolean right = false;
 
     public void randomMovement() {
-        if (Math.random() > 0.99)
+        if (Math.random() > 0.99 && this.amplifier > 1)
             assignMoveInt();
-        if (moveTicks>0) {
-            moveTicks--;
-            switch (moveDirecton) {
+        if (this.moveTicks>0) {
+            this.moveTicks--;
+            switch (this.moveDirecton) {
                 case 0: forward = true;
                     break;
                 case 1: backwards = true;
@@ -181,12 +198,12 @@ public class Insanity extends IClientStatusEffect {
         else resetMove();
     }
     void assignMoveInt() {
-        moveTicks = (int) (10+Math.random()*30);
-        moveDirecton = (int) (Math.round(Math.random()*3));
+        this.moveTicks = (int) (10+Math.random()*30);
+        this.moveDirecton = (int) (Math.round(Math.random()*3));
         //TODO: Fix player only moving back & right
     }
     void resetMove() {
-        moveDirecton = 0;
+        this.moveDirecton = 0;
         forward = false;
         backwards = false;
         left = false;

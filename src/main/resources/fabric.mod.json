@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "tough_as_client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Tough as Client",
   "description": "A completely client-side survival mod",
   "authors": [

@@ -15,7 +15,10 @@
     "AbstractClientPlayerEntityMixin",
     "LevelStorageMixin",
     "MultiplayerScreenMixin",
-    "ReloadableResourceManagerMixin"
+    "ReloadableResourceManagerMixin",
+    "BiomeColorsMixin",
+    "InGameHudMixin",
+    "PlayerInventoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

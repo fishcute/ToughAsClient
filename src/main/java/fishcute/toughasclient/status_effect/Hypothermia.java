@@ -46,7 +46,7 @@ public class Hypothermia extends IClientStatusEffect {
             }
             else if (this.changeWaitTick<=0) {
                 this.lockedSlot = ClientUtils.client().player.inventory.selectedSlot;
-                changeWaitTick = 100 + (int) (Math.random()*200);
+                this.changeWaitTick = 100 + (int) (Math.random()*200);
             }
         }
         if (DataManager.temperature>22)

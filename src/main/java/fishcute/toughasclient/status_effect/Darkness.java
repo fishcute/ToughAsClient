@@ -1,6 +1,8 @@
 package fishcute.toughasclient.status_effect;
 
 import fishcute.toughasclient.ClientInit;
+import fishcute.toughasclient.armor.ClearsightSpectacles;
+import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.util.Utils;
 import net.fabricmc.api.EnvType;
@@ -35,14 +37,16 @@ public class Darkness extends IClientStatusEffect {
 
     @Override
     public void tick() {
-        boolean ending = (this.getTicks()<= Utils.secondsToTicks(5));
+        // && !ClearsightSpectacles.hasAffect
+
+        boolean ending = (getTicks()<= Utils.secondsToTicks(5));
         if (this.current<this.goal)
             this.current+=0.1;
         else if (this.current>this.goal)
             this.current-=0.1;
 
 
-        if (!ending&&(this.goal==0||Math.random()>0.99))
+        if (!ending && (this.goal==0||Math.random()>0.99))
             if (Math.random()<0.5)
                 this.goal = (int) ((Math.random()*-100));
             else
@@ -50,16 +54,19 @@ public class Darkness extends IClientStatusEffect {
         else if (ending)
             this.goal = this.savedBrightness;
 
-        ClientUtils.client().options.gamma = this.current/10;
+        if (!ClearsightSpectacles.hasAffect)
+            ClientUtils.client().options.gamma = this.current/10;
+        else
+            ClientUtils.client().options.gamma = this.savedBrightness;
     }
 
     @Override
     public void onEnd() {
-        ClientUtils.client().options.gamma = this.savedBrightness;
+        ClientUtils.client().options.gamma = savedBrightness;
     }
 
     @Override
     public void onStart() {
-        this.savedBrightness = (float) ClientUtils.client().options.gamma;
+        savedBrightness = (float) ClientUtils.client().options.gamma;
     }
 }

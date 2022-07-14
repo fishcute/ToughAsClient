@@ -1,8 +1,8 @@
 package fishcute.toughasclient.mixin;
 
+import fishcute.toughasclient.items.ClientItemRegistry;
+import fishcute.toughasclient.items.IClientItem;
 import fishcute.toughasclient.util.Utils;
-import fishcute.toughasclient.custom_item.CustomItemRegistry;
-import fishcute.toughasclient.custom_item.ICustomItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.item.ItemRenderer;
@@ -24,10 +24,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ItemRenderer.class)
 public class ItemRendererMixin {
     //TODO: Find a better place to do this stuff
+    //Nah, I'm too lazy to do that. Anyways, this works so why do I care.
     @Inject(method = "getHeldItemModel", cancellable = true, at = @At("HEAD"))
     public void getItemModel(ItemStack stack, World world, LivingEntity entity, CallbackInfoReturnable<BakedModel> callbackInfo) {
-        if (CustomItemRegistry.isCustomItem(stack)&&stack.getTag()!=null) {
-            ICustomItem i = CustomItemRegistry.valueOf(stack);
+        if (ClientItemRegistry.isCustomItem(stack)&&stack.getTag()!=null) {
+            IClientItem i = ClientItemRegistry.valueOf(stack);
             NbtList nbtList = new NbtList();
             int k = 0;
             if (i.lore()!=null&&i.lore().size()>0) {
@@ -39,7 +40,7 @@ public class ItemRendererMixin {
             nbtList.add(k, NbtString.of(Text.Serializer.toJson(Text.of(Formatting.GREEN + "" + Formatting.ITALIC + Utils.name()))));
             NbtCompound compound = stack.getTag().getCompound("display");
             compound.put("Lore", nbtList);
-            compound.putString("Name", Text.Serializer.toJson(Text.of(Formatting.WHITE + i.identifier())));
+            compound.putString("Name", Text.Serializer.toJson(Text.of(i.nameColor + i.identifier())));
             stack.getTag().putInt("CustomModelData", i.modelData());
         }
     }

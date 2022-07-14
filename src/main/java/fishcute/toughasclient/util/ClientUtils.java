@@ -2,25 +2,31 @@ package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.DataManager;
 import fishcute.toughasclient.ToughAsClientMod;
-import fishcute.toughasclient.block.CleanedWater;
-import fishcute.toughasclient.block.CleanedWaterManager;
-import fishcute.toughasclient.custom_armor.CustomArmorRegistry;
-import fishcute.toughasclient.custom_item.*;
+import fishcute.toughasclient.armor.ClearsightSpectacles;
+import fishcute.toughasclient.armor.ClientArmorRegistry;
+import fishcute.toughasclient.fluid.CleanedWaterManager;
+import fishcute.toughasclient.fluid.ClientFluidManager;
+import fishcute.toughasclient.fluid.ClientFluids;
+import fishcute.toughasclient.items.*;
 import fishcute.toughasclient.status_effect.Drenched;
 import fishcute.toughasclient.status_effect.StatusEffectManager;
 import fishcute.toughasclient.status_message.StatusMessage;
 import fishcute.toughasclient.status_message.StatusMessageManager;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Mouse;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EntityPose;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
@@ -28,6 +34,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.client.MinecraftClient;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 @Environment(EnvType.CLIENT)
 public class ClientUtils {
@@ -37,6 +44,7 @@ public class ClientUtils {
 	public static void tick() {
 		if (client().isPaused())
 			return;
+
 		updateAll();
 		correctAll();
 
@@ -44,11 +52,11 @@ public class ClientUtils {
 			onStart();
 			warned = true;
 		}
-		CustomItemRegistry.tickCustomItems();
-		CustomArmorRegistry.tickCustomArmor();
+		ClientItemRegistry.tickCustomItems();
+		ClientArmorRegistry.tickCustomArmor();
 		if (CleanedWaterManager.isFiltering())
 			CleanedWaterManager.filterTick();
-		CleanedWater.tickAll();
+		ClientFluidManager.tick();
 
 		if (client().player.isDead())
 			resetAll();
@@ -153,6 +161,58 @@ public class ClientUtils {
 		return percent;
 	}
 
+	static int getTime() {
+		int a = 0;
+		if (world().getTimeOfDay() > 24000)
+			a = (int) Math.floor(world().getTimeOfDay() / 24000f);
+		return (int) (world().getTimeOfDay() - (a * 24000));
+	}
+
+	static int getTimeProgress() {
+		int a = 0;
+		if (world().getTimeOfDay() > 12000)
+			a = (int) Math.floor(world().getTimeOfDay() / 12000f);
+		return (int) (world().getTimeOfDay() - (a * 12000));
+	}
+
+	static boolean progressingIntoDay() {
+		return getTime() <= 12000;
+	}
+
+	static boolean isBlockNearby(Block block, BlockPos loc, int distance, int height) {
+		for (int i = -distance; i <= distance; i++)
+			for (int j = -distance; j <= distance; j++)
+				for (int k = -height; k <= height; k++) {
+					if (world().getBlockState(loc.add(i, k, j)).getBlock().equals(block))
+						return true;
+				}
+		return false;
+	}
+
+	static double getDistanceToBlockNearby(ArrayList<Block> blocks, BlockPos loc, int distance, int height) {
+		for (int i = -distance; i <= distance; i++)
+			for (int j = -distance; j <= distance; j++)
+				for (int k = -height; k <= height; k++) {
+					BlockPos pos = loc.add(i, k, j);
+					for (Block b : blocks)
+						if (world().getBlockState(pos).getBlock().equals(b))
+							return pos.getManhattanDistance(loc);
+				}
+		return -1;
+	}
+
+	public static boolean inventoryContains(Item item) {
+		return client().player.inventory.contains(item.getDefaultStack());
+	}
+
+	public static ItemStack getItemInMainHand() {
+		return client().player.getMainHandStack();
+	}
+
+	public static ItemStack getItemInOffHand() {
+		return client().player.getOffHandStack();
+	}
+
 	static void drenchUpdate() {
 		if (e().isTouchingWater()||(isBeingRainedOn()&&!UmbrellaItems.umbrellaInHand(Hand.MAIN_HAND)&&!UmbrellaItems.umbrellaInHand(Hand.OFF_HAND)))
 			StatusEffectManager.addStatusEffect(new Drenched(Utils.minutesToTicks(1), 0));
@@ -176,29 +236,29 @@ public class ClientUtils {
 				interactWaitTick = 10;
 				Water.drink(vec.x, Math.round(vec.y+0.5), vec.z);
 			}
-			if (b.getBlock().getTranslationKey().equals("block.minecraft.water")&&CustomItemRegistry.equals(client().player.inventory.getMainHandStack(), new UVSterilizer())) {
-				if (CleanedWater.canBePlacedAt(pos, client().world)) {
+			if (b.getBlock().getTranslationKey().equals("block.minecraft.water")&& ClientItemRegistry.equals(client().player.inventory.getMainHandStack(), new UVSterilizer())) {
+				if (ClientFluidManager.canBePlacedAt(pos, client().world)) {
 					if (!CleanedWaterManager.isFiltering())
-						if (!CleanedWater.isCleanedAtLoc(pos))
+						if (!ClientFluidManager.instanceOfFluidAt(pos, ClientFluids.CLEANED_WATER))
 							CleanedWaterManager.prepare(pos);
 						else new StatusMessage(Utils.translate("tough_as_client.message.uv_sterilizer.water_cleaned"), 100, 100, 16577539).play();
 				}
 				else new StatusMessage(Utils.translate("tough_as_client.message.uv_sterilizer.water_too_large"), 100, 100, 16577539).play();
 				interactWaitTick = 20;
 			}
-			if (b.getBlock().getTranslationKey().equals("block.minecraft.water")&&CustomItemRegistry.equals(client().player.inventory.getMainHandStack(), new WaterTestingKit())) {
+			if (b.getBlock().getTranslationKey().equals("block.minecraft.water")&& ClientItemRegistry.equals(client().player.inventory.getMainHandStack(), new WaterTestingKit())) {
 				swingArm(Hand.MAIN_HAND);
 				Water.WaterType type = Water.waterType(pos);
 				ClientUtils.playSound(SoundEvents.ENTITY_PLAYER_SPLASH, pos, SoundCategory.MASTER, 1, 1);
 				ClientUtils.playSound(SoundEvents.ENTITY_HORSE_ARMOR, SoundCategory.MASTER, 1, 0);
 
-				if (CleanedWater.isCleanedAtLoc(Utils.toBlockPos(vec))) {
+				if (ClientFluidManager.instanceOfFluidAt(pos, ClientFluids.CLEANED_WATER)) {
 					new StatusMessage(Utils.translate("tough_as_client.message.water_testing_kit.sanitary"), 300, 100, 49151).play();
-					((WaterTestingKit) CustomItemRegistry.getItem("Water Testing Kit")).result = Water.WaterType.SANITARY;
+					((WaterTestingKit) ClientItemRegistry.getItem("Water Testing Kit")).result = Water.WaterType.SANITARY;
 					interactWaitTick = 20;
 					return;
 				}
-				((WaterTestingKit) CustomItemRegistry.getItem("Water Testing Kit")).result = type;
+				((WaterTestingKit) ClientItemRegistry.getItem("Water Testing Kit")).result = type;
 				switch (type) {
 					case NORMAL: new StatusMessage(Utils.translate("tough_as_client.message.water_testing_kit.normal"), 300, 100, 49151).play();
 						break;

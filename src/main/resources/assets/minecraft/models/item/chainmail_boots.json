@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+        "layer0": "item/chainmail_boots"
+    },
+ "overrides": [
+ {"predicate": {"custom_model_data":1}, "model": "tough_as_client:item/cooling_boots"}
+ ]
+}

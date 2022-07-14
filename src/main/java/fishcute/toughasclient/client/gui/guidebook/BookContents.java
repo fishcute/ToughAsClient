@@ -16,22 +16,22 @@ import java.util.ArrayList;
 @Environment(EnvType.CLIENT)
 public class BookContents {
     public BookContents(String title, Identifier background, int backgroundWidth, int backgroundHeight, ArrayList<ButtonWidget> buttonList,  ArrayList<TextElement> textList, ArrayList<PictureElement> imageList) {
-        this.title = title;
-        this.background = background;
-        this.backgroundWidth = backgroundWidth;
-        this.backgroundHeight = backgroundHeight;
-        this.buttonList = buttonList;
-        this.textList = textList;
-        this.imageList = imageList;
+        title = title;
+        background = background;
+        backgroundWidth = backgroundWidth;
+        backgroundHeight = backgroundHeight;
+        buttonList = buttonList;
+        textList = textList;
+        imageList = imageList;
     }
     public BookContents(String title, Identifier background, int backgroundWidth, int backgroundHeight) {
-        this.title = title;
-        this.background = background;
-        this.backgroundWidth = backgroundWidth;
-        this.backgroundHeight = backgroundHeight;
-        this.buttonList = new ArrayList<>();
-        this.textList = new ArrayList<>();
-        this.imageList = new ArrayList<>();
+        title = title;
+        background = background;
+        backgroundWidth = backgroundWidth;
+        backgroundHeight = backgroundHeight;
+        buttonList = new ArrayList<>();
+        textList = new ArrayList<>();
+        imageList = new ArrayList<>();
     }
     public static void addPictureElement(BookContents i, PictureElement e) {
         i.imageList.add(e);
@@ -76,10 +76,10 @@ public class BookContents {
     */
     class TextElement {
         public TextElement(String text, int x, int y, int color) {
-            this.text = text;
-            this.x = x;
-            this.y = y;
-            this.color = color;
+            text = text;
+            x = x;
+            y = y;
+            color = color;
         }
         String text;
         int x;
@@ -88,13 +88,13 @@ public class BookContents {
     }
     class PictureElement {
         public PictureElement(Identifier image, int x, int y, int width, int height, int scaleHeight, int scaleWidth) {
-            this.image = image;
-            this.width = width;
-            this.height = height;
-            this.scaleHeight = scaleHeight;
-            this.scaleWidth = scaleWidth;
-            this.x = x;
-            this.y = y;
+            image = image;
+            width = width;
+            height = height;
+            scaleHeight = scaleHeight;
+            scaleWidth = scaleWidth;
+            x = x;
+            y = y;
         }
         Identifier image;
         int x;

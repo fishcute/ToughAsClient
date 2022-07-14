@@ -1,9 +1,21 @@
+/*
+*    MCreator note:
+*
+*    If you lock base mod element files, you can edit this file and the proxy files
+*    and they won't get overwritten. If you change your mod package or modid, you
+*    need to apply these changes to this file MANUALLY.
+*
+*
+*    If you do not lock base mod element files in Workspace settings, this file
+*    will be REGENERATED on each build.
+*
+*/
 package fishcute.toughasclient;
 
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.client.InsanityOverlay;
 import fishcute.toughasclient.client.StatusOverlay;
-import fishcute.toughasclient.client.TemperatureOverlay;
+import fishcute.toughasclient.client.EffectOverlay;
 import fishcute.toughasclient.client.particle.*;
 import fishcute.toughasclient.util.Tick;
 import net.minecraft.util.registry.Registry;
@@ -35,6 +47,9 @@ public class ClientInit implements ClientModInitializer {
 			FabricParticleTypes.simple(false));
 	public static final DefaultParticleType SICK_PARTICLE = Registry.register(Registry.PARTICLE_TYPE, "tough_as_client:sick",
 			FabricParticleTypes.simple(false));
+
+	public static final DefaultParticleType CURSED_FLAME_PARTICLE = Registry.register(Registry.PARTICLE_TYPE, "tough_as_client:cursed_flame",
+			FabricParticleTypes.simple(false));
 	public static final DefaultParticleType NONE = null;
 	@Override
 	public void onInitializeClient() {
@@ -45,9 +60,10 @@ public class ClientInit implements ClientModInitializer {
 		ParticleFactoryRegistry.getInstance().register(CLEAN_PARTICLE, CleanParticle.CustomParticleFactory::new);
 		ParticleFactoryRegistry.getInstance().register(BREATH_PARTICLE, BreathParticle.CustomParticleFactory::new);
 		ParticleFactoryRegistry.getInstance().register(SICK_PARTICLE, SickParticle.CustomParticleFactory::new);
+		ParticleFactoryRegistry.getInstance().register(CURSED_FLAME_PARTICLE, CursedFlameParticle.CustomParticleFactory::new);
 		HudRenderCallback.EVENT.register((matrices, tickDelta) -> {
 			ClientOverlay.render(matrices, tickDelta);
-			TemperatureOverlay.render(matrices, tickDelta);
+			EffectOverlay.render(matrices, tickDelta);
 			StatusOverlay.render(matrices, tickDelta);
 			InsanityOverlay.render(matrices, tickDelta);
 		});

@@ -7,9 +7,21 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.render.block.entity.BlockEntityRenderer;
+import net.minecraft.client.render.item.ItemModels;
+import net.minecraft.client.render.item.ItemRenderer;
+import net.minecraft.client.render.model.BakedModel;
+import net.minecraft.client.render.model.ModelBakeSettings;
+import net.minecraft.client.render.model.ModelLoader;
+import net.minecraft.client.render.model.ModelRotation;
+import net.minecraft.client.texture.Sprite;
+import net.minecraft.client.texture.SpriteAtlasTexture;
+import net.minecraft.client.util.ModelIdentifier;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Language;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -54,6 +66,9 @@ public class Utils {
     public static float fromTo(float i, float j) {
         return (float) ThreadLocalRandom.current().nextDouble(i, j);
     }
+    public static Sprite toSprite(Identifier i) {
+        return new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, i).getSprite();
+    }
     public static Vec3d posInFront(double i) {
         ClientPlayerEntity e = ClientUtils.client().player;
         VectorDirection vecDir = new VectorDirection(e.pitch, e.yaw).mult(i);
@@ -86,5 +101,21 @@ public class Utils {
         RaycastContext context = new RaycastContext(eyePosition, traceEnd, RaycastContext.ShapeType.OUTLINE, fluidHandling, e);
 
         return e.getEntityWorld().getBlockState(e.getEntityWorld().raycast(context).getBlockPos());
+    }
+    public static int blendColors(int a, int b, float ratio){
+        ratio = 1-ratio;
+        int mask1 = 0x00ff00ff;
+        int mask2 = 0xff00ff00;
+
+        int f2 = (int)(256 * ratio);
+        int f1 = 256 - f2;
+
+        return (((((a & mask1) * f1) + ((b & mask1) * f2)) >> 8) & mask1)
+                | (((((a & mask2) * f1) + ((b & mask2) * f2)) >> 8) & mask2);
+    }
+    public static BakedModel getModel(Identifier i) {
+        //return new ModelLoader(ClientUtils.client().getResourceManager(), ClientUtils.client().getBlockColors(), ClientUtils.client().getProfiler(), 0).
+                //bake(i, ModelRotation.X0_Y0);
+        return ClientUtils.client().getBakedModelManager().getModel(new ModelIdentifier("diorite"));
     }
 }

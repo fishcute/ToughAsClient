@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/packed_ice",
+	"overrides": [
+		{"predicate": {"custom_model_data":1}, "model": "tough_as_client:item/packed_ice_pack"}
+	]
+}

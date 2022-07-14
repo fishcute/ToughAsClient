@@ -20,15 +20,15 @@ public class VectorDirection {
         float f5 = MathHelper.sin(-f * ((float)Math.PI / 180F));
         float f6 = f3 * f4;
         float f7 = f2 * f4;
-        this.x=f6;
-        this.y=f5;
-        this.z=f7;
+        x=f6;
+        y=f5;
+        z=f7;
     }
 
     public VectorDirection() {
-        this.x=0;
-        this.y=0;
-        this.z=0;
+        x=0;
+        y=0;
+        z=0;
     }
 
     public static VectorDirection fromDoubles(double x, double y, double z) {
@@ -56,16 +56,16 @@ public class VectorDirection {
     }
 
     public VectorDirection mult(double factor) {
-        this.x*=factor;
-        this.y*=factor;
-        this.z*=factor;
+        x*=factor;
+        y*=factor;
+        z*=factor;
         return this;
     }
 
     public VectorDirection add(double factor) {
-        this.x+=factor;
-        this.y+=factor;
-        this.z+=factor;
+        x+=factor;
+        y+=factor;
+        z+=factor;
         return this;
     }
 

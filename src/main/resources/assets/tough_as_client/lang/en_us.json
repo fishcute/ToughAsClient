@@ -1,12 +1,22 @@
 {
 	"tough_as_client.armor.snow_armor.description" : "Keeps you warm",
 	"tough_as_client.armor.running_shoes.description" : "Makes running easier",
+	"tough_as_client.armor.cooling_armor.description" : "Cools you when you have an Ice Pack in your inventory",
+	"tough_as_client.armor.goggles_revealing.description" : "Allows you to see things better",
+	"tough_as_client.armor.goggles_revealing.cannot_use" : "An external force is interfering with the spectacles' illusion",
 	
 	"tough_as_client.item.fan.description" : "Cools you down",
 	"tough_as_client.item.thermometer.description" : "Shows your immediate temperature",
 	"tough_as_client.item.umbrella.description" : "Stops rain from drenching you",
 	"tough_as_client.item.uv_sterilizer.description" : "Turns dirty water into drinkable water",
 	"tough_as_client.item.water_testing_kit.description" : "Tests water safety",
+	"tough_as_client.item.cursed_lantern.lore" : "This mysterious lantern glows a dark shade of purple",
+	"tough_as_client.item.cursed_lantern.description" : "Allows you to stay at a stable temperature at the cost of sanity",
+	"tough_as_client.item.ice_pack.description" : "Keeps you cooler when held",
+
+	"tough_as_client.item.ice_pack.tier.ice" : "Ice",
+	"tough_as_client.item.ice_pack.tier.packed_ice" : "Packed Ice",
+	"tough_as_client.item.ice_pack.tier.blue_ice" : "Blue Ice",
 	
 	"tough_as_client.item.thermometer.lore" : "Thermometer temperature is %s",
 	"tough_as_client.item.thermometer.lore.1" : "Freezing",

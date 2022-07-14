@@ -33,12 +33,12 @@ public class SaveInstance {
         return d;
     }
     public SaveInstance(ArrayList<IClientStatusEffect> effects, int thirst, int stamina, int temperature, int sanity, int weight) {
-        this.effects = effects;
-        this.thirst = thirst;
-        this.stamina = stamina;
-        this.temperature = temperature;
-        this.sanity = sanity;
-        this.weight = weight;
+        effects = effects;
+        thirst = thirst;
+        stamina = stamina;
+        temperature = temperature;
+        sanity = sanity;
+        weight = weight;
     }
     public static void load(SaveData d) {
         DataManager.effects = DataUtils.fromStringArrayList(d.effects);

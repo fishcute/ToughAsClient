@@ -1,7 +1,7 @@
 package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.DataManager;
-import fishcute.toughasclient.custom_armor.CustomArmorRegistry;
+import fishcute.toughasclient.armor.ClientArmorRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -74,7 +74,7 @@ public class Stamina {
         staminaDebuff();
         if (DataManager.stamina > 0) {
             if (e().isSprinting() && staminaTick <= 0 && !ClientUtils.client().player.hasStatusEffect(StatusEffects.SPEED)) {
-                if (CustomArmorRegistry.wearing(CustomArmorRegistry.ArmorPiece.BOOTS, CustomArmorRegistry.getItem("Running Shoes")))
+                if (ClientArmorRegistry.wearing(ClientArmorRegistry.ArmorPiece.BOOTS, ClientArmorRegistry.getItem("Running Shoes")))
                     cStaminaTick(14);
                 else
                     cStaminaTick(8);

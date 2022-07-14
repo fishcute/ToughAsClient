@@ -39,11 +39,11 @@ public class Config {
     public boolean dangerousWater;
 
     public Config(ConfigData confileFileFormat) {
-        this.thirst = confileFileFormat.enableThirst;
-        this.temperature = confileFileFormat.enableTemperature;
-        this.stamina = confileFileFormat.enableStamina;
-        this.sanity = confileFileFormat.enableSanity;
-        this.dangerousWater = confileFileFormat.canWaterBeHarmful;
+        thirst = confileFileFormat.enableThirst;
+        temperature = confileFileFormat.enableTemperature;
+        stamina = confileFileFormat.enableStamina;
+        sanity = confileFileFormat.enableSanity;
+        dangerousWater = confileFileFormat.canWaterBeHarmful;
     }
 
     public Config() {

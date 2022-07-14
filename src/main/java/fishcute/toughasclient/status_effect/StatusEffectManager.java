@@ -3,6 +3,7 @@ package fishcute.toughasclient.status_effect;
 import fishcute.toughasclient.DataManager;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.network.packet.s2c.play.HealthUpdateS2CPacket;
 
 import java.util.Iterator;
 
@@ -62,5 +63,35 @@ public class StatusEffectManager {
                 }
             }
         return false;
+    }
+
+    public static int getStatusEffectAmplifier(String name) {
+        if (DataManager.effects.size()>0)
+            for (IClientStatusEffect b : DataManager.effects) {
+                if (b != null && b.getName().equals(name)) {
+                    return b.amplifier;
+                }
+            }
+        return 0;
+    }
+
+    public static int getStatusEffectTick(String name) {
+        if (DataManager.effects.size()>0)
+            for (IClientStatusEffect b : DataManager.effects) {
+                if (b != null && b.getName().equals(name)) {
+                    return b.ticks;
+                }
+            }
+        return 0;
+    }
+
+    public static IClientStatusEffect getStatusEffect(String name) {
+        if (DataManager.effects.size()>0)
+            for (IClientStatusEffect b : DataManager.effects) {
+                if (b != null && b.getName().equals(name)) {
+                    return b;
+                }
+            }
+        return null;
     }
 }

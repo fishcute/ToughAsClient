@@ -14,7 +14,7 @@ public abstract class IClientStatusEffect {
     int ticks;
     int amplifier;
     public boolean active = false;
-    public final String name = this.getName();
+    public final String name = getName();
     public IClientStatusEffect(int ticks, int amplifier) {
         this.ticks = ticks;
         this.amplifier = amplifier;
@@ -25,7 +25,7 @@ public abstract class IClientStatusEffect {
     }
 
     public String formattedTicksRemaining() {
-        int time = ticks/80;
+        int time = this.ticks/80;
         int minutes = time / (60);
         int seconds = (time) % 60;
         return String.format("%d:%02d", minutes, seconds);
@@ -40,8 +40,8 @@ public abstract class IClientStatusEffect {
     public void tickInit() {
         this.active = true;
         this.ticks--;
-        this.playParticle();
-        this.tick();
+        playParticle();
+        tick();
     }
 
     public int getTicks() {
@@ -50,18 +50,18 @@ public abstract class IClientStatusEffect {
 
     public void remove() {
         for (IClientStatusEffect e : DataManager.effects) {
-            if (e.getName().equals(this.getName()))
+            if (e.getName().equals(getName()))
                 DataManager.effects.remove(this);
         }
     }
 
     public void playParticle() {
-        if (this.particleType()!=ClientInit.NONE)
-            Utils.surroundParticle(this.particleType(), MinecraftClient.getInstance().player, 0.93, 0.5);
+        if (particleType()!=ClientInit.NONE)
+            Utils.surroundParticle(particleType(), MinecraftClient.getInstance().player, 0.93, 0.5);
     }
     public void onEndInit() {
         this.active = false;
-        this.onEnd();
+        onEnd();
     }
     public abstract void onEnd();
     public abstract void onStart();

@@ -1,7 +1,22 @@
+/*
+ *    MCreator note:
+ *
+ *    If you lock base mod element files, you can edit this file and the proxy files
+ *    and they won't get overwritten. If you change your mod package or modid, you
+ *    need to apply these changes to this file MANUALLY.
+ *
+ *
+ *    If you do not lock base mod element files in Workspace settings, this file
+ *    will be REGENERATED on each build.
+ *
+ */
 package fishcute.toughasclient;
 
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.util.Utils;
+import net.minecraft.client.render.block.BlockModelRenderer;
+import net.minecraft.client.render.block.BlockModels;
+import net.minecraft.client.render.block.BlockRenderManager;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import org.apache.logging.log4j.Level;
@@ -16,6 +31,11 @@ import java.util.Arrays;
 
 public class ToughAsClientMod implements ModInitializer {
 	/*
+	TODO List for new update:
+
+	Hiking shoes (less effective than running shoes but decreases jump stamina deduction)
+	Some sort of cooling cloths
+
 	TODO List
 	General:
 	Wet suit
@@ -24,6 +44,7 @@ public class ToughAsClientMod implements ModInitializer {
 	Commands of some sort
 	Weight
 	Temperature based off of y level
+	Add Water:99 to lang file
 	Internal:
 	Remove unnecessary stuff (imports, casts)
 	Server to Client networking: implements ServerLoginConnectionEvents.Init
@@ -48,7 +69,8 @@ public class ToughAsClientMod implements ModInitializer {
 	}
 
 	public static void sendAlert(String message) {
-		ClientUtils.client().player.sendMessage(Text.of(Formatting.YELLOW + "[" + Utils.name() + "] " +
+		if (ClientUtils.client().player != null)
+			ClientUtils.client().player.sendMessage(Text.of(Formatting.YELLOW + "[" + Utils.name() + "] " +
 				message), false);
 	}
 	public static String getAlertPrefix() {
@@ -61,5 +83,9 @@ public class ToughAsClientMod implements ModInitializer {
 
 	public static boolean isImportant(String username) {
 		return importantPeople.contains(username);
+	}
+
+	public static boolean isIngame() {
+		return ClientUtils.client().player != null;
 	}
 }

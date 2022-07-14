@@ -2,7 +2,8 @@ package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.DataManager;
 import fishcute.toughasclient.ToughAsClientMod;
-import fishcute.toughasclient.block.CleanedWater;
+import fishcute.toughasclient.fluid.ClientFluidManager;
+import fishcute.toughasclient.fluid.ClientFluids;
 import fishcute.toughasclient.status_effect.*;
 import fishcute.toughasclient.status_message.StatusMessage;
 import net.fabricmc.api.EnvType;
@@ -67,11 +68,11 @@ public class Water {
             WaterType w = waterType(new BlockPos(x, y, z));
             BlockPos b = new BlockPos(x, y, z);
             ClientUtils.playSound(SoundEvents.ENTITY_PLAYER_SPLASH_HIGH_SPEED, b, SoundCategory.MASTER, 1, Utils.fromTo(1, 2));
-            if (CleanedWater.isCleanedAtLoc(b.add(0, -1, 0))) {
+            if (ClientFluidManager.instanceOfFluidAt(b.add(0, -1, 0), ClientFluids.CLEANED_WATER)) {
                 DataManager.thirst = DataManager.thirst + 30;
                 ClientUtils.particleGroup(ParticleTypes.SPLASH, x, y, z, 0.6, 0.6, 0.6, 15);
                 ClientUtils.particleGroup(ParticleTypes.SPIT, x, y, z, 0.4, 0.4, 0.4,  5);
-                CleanedWater.getCleanedAtLoc(b.add(0, -1, 0)).drinkFrom();
+                ClientFluidManager.useFluidAtLoc(b.add(0, -1, 0));
                 w = WaterType.SANITARY;
             }
             else {

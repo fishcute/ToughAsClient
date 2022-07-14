@@ -1,7 +1,7 @@
 package fishcute.toughasclient.mixin;
 
 import fishcute.toughasclient.DataManager;
-import fishcute.toughasclient.custom_item.CustomItemRegistry;
+import fishcute.toughasclient.items.ClientItemRegistry;
 import fishcute.toughasclient.status_effect.Insanity;
 import fishcute.toughasclient.status_effect.StatusEffectManager;
 import fishcute.toughasclient.status_message.StatusMessage;
@@ -25,9 +25,9 @@ public class MinecraftClientMixin {
     @Inject(method = "doItemUse", at = @At("HEAD"), cancellable = true)
     private void onItemUse(CallbackInfo info) {
         boolean blockItem = ((ClientUtils.client().player.getStackInHand(Hand.MAIN_HAND)).getItem() instanceof BlockItem);
-        if (CustomItemRegistry.isCustomItem(ClientUtils.client().player.getStackInHand(Hand.MAIN_HAND))||(CustomItemRegistry.isCustomItem(ClientUtils.client().player.getStackInHand(Hand.OFF_HAND))&&(!blockItem)))
+        if (ClientItemRegistry.isCustomItem(ClientUtils.client().player.getStackInHand(Hand.MAIN_HAND))||(ClientItemRegistry.isCustomItem(ClientUtils.client().player.getStackInHand(Hand.OFF_HAND))&&(!blockItem)))
             info.cancel();
-        if (Utils.raycastFromPlayerGetBlock(false).getBlock().getTranslationKey().contains("bed")&& DataManager.sanity<40) {
+        if (Utils.raycastFromPlayerGetBlock(false).getBlock().getTranslationKey().contains("_bed") && DataManager.sanity<40) {
             info.cancel();
             ClientUtils.swingArm(Hand.MAIN_HAND);
             ClientUtils.client().player.sendMessage(Text.of(Utils.translate("tough_as_client.sleep_failure.insane")), true);
