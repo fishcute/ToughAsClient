@@ -1,6 +1,5 @@
 package fishcute.toughasclient.armor;
 
-import fishcute.toughasclient.ToughAsClientMod;
 import fishcute.toughasclient.util.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

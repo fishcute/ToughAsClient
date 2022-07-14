@@ -3,7 +3,6 @@ package fishcute.toughasclient.client;
 
 import fishcute.toughasclient.ToughAsClientMod;
 import fishcute.toughasclient.armor.ClearsightSpectacles;
-import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.status_effect.ClientStatusEffects;
 import fishcute.toughasclient.util.Sanity;
 import fishcute.toughasclient.status_effect.StatusEffectManager;

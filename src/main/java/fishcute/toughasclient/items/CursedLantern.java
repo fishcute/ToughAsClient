@@ -1,19 +1,14 @@
 package fishcute.toughasclient.items;
 
 import fishcute.toughasclient.ClientInit;
-import fishcute.toughasclient.DataManager;
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.util.Utils;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.particle.DefaultParticleType;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 
 @Environment(EnvType.CLIENT)

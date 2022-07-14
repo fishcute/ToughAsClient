@@ -55,9 +55,6 @@ public class ClientArmorRegistry {
                 return e;
         return null;
     }
-    public static void register(IClientArmor i) {
-        registry.add(i);
-    }
     public static IClientArmor getItem(String i) {
         for (IClientArmor j : registry) {
             if (j.baseIdentifier().equals(i))

@@ -49,7 +49,7 @@ public abstract class IClientArmor {
             case LEGGINGS: return leggingsName();
             case CHESTPLATE: return chestplateName();
             case HELMET: return helmetName();
-        };
+        }
         return "";
     }
 }

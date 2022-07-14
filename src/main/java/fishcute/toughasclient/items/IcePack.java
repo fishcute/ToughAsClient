@@ -7,7 +7,6 @@ import net.minecraft.util.Formatting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 
 @Environment(EnvType.CLIENT)

@@ -1,7 +1,6 @@
 package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.DataManager;
-import fishcute.toughasclient.ToughAsClientMod;
 import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.armor.CoolingArmor;
 import fishcute.toughasclient.armor.SnowArmor;

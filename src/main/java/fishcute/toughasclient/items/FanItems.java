@@ -133,6 +133,6 @@ public class FanItems {
     static int calculateTemperatureChange() {
         if (DataManager.temperature<50)
             return 0;
-        return Math.round((Utils.distance(DataManager.temperature, 0))/40);
+        return Math.round((Utils.distance(DataManager.temperature, 0))/40f);
     }
 }

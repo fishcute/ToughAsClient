@@ -2,7 +2,6 @@ package fishcute.toughasclient.util;
 
 import fishcute.toughasclient.DataManager;
 import fishcute.toughasclient.ToughAsClientMod;
-import fishcute.toughasclient.armor.ClearsightSpectacles;
 import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.fluid.CleanedWaterManager;
 import fishcute.toughasclient.fluid.ClientFluidManager;
@@ -26,7 +25,6 @@ import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.Tag;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;

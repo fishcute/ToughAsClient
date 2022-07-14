@@ -2,7 +2,6 @@ package fishcute.toughasclient.status_effect;
 
 import fishcute.toughasclient.ClientInit;
 import fishcute.toughasclient.armor.ClearsightSpectacles;
-import fishcute.toughasclient.armor.ClientArmorRegistry;
 import fishcute.toughasclient.util.ClientUtils;
 import fishcute.toughasclient.util.Utils;
 import fishcute.toughasclient.client.InsanityOverlay;

@@ -7,13 +7,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.render.block.entity.BlockEntityRenderer;
-import net.minecraft.client.render.item.ItemModels;
-import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.BakedModel;
-import net.minecraft.client.render.model.ModelBakeSettings;
-import net.minecraft.client.render.model.ModelLoader;
-import net.minecraft.client.render.model.ModelRotation;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.ModelIdentifier;
@@ -112,10 +106,5 @@ public class Utils {
 
         return (((((a & mask1) * f1) + ((b & mask1) * f2)) >> 8) & mask1)
                 | (((((a & mask2) * f1) + ((b & mask2) * f2)) >> 8) & mask2);
-    }
-    public static BakedModel getModel(Identifier i) {
-        //return new ModelLoader(ClientUtils.client().getResourceManager(), ClientUtils.client().getBlockColors(), ClientUtils.client().getProfiler(), 0).
-                //bake(i, ModelRotation.X0_Y0);
-        return ClientUtils.client().getBakedModelManager().getModel(new ModelIdentifier("diorite"));
     }
 }
