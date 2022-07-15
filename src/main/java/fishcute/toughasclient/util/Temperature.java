@@ -20,6 +20,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.LightType;
+import net.minecraft.world.dimension.DimensionType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -109,9 +110,15 @@ public class Temperature {
         //TODO: have fun figuring this out
 
         //Daylight warmth is out of 10
-        int warmth = (int) (daylightWarmth() + (10 * humidity()));
+        int warmth = (int) (daylightWarmth() + (25 * humidity()));
+        //TODO: FIx this
 
         warmth -= (8 - daylightWarmth()) * (1 - humidity());
+
+        //(8 - 0) * 0.6
+
+        //ToughAsClientMod.sendAlert(humidity() + "");
+        //TODO: Remove this ^
 
         if (warmth > 10)
             warmth = 10;
@@ -220,6 +227,8 @@ public class Temperature {
         return res;
     }
     static int daylightWarmth() {
+        if (ClientUtils.world().getDimension().hasFixedTime())
+            return 10;
         int a = ClientUtils.getTimeProgress();
         if (!ClientUtils.progressingIntoDay()) {
             a = 12000 - a;

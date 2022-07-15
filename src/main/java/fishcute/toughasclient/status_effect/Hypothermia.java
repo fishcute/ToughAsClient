@@ -8,6 +8,8 @@ import fishcute.toughasclient.status_message.StatusMessage;
 import fishcute.toughasclient.util.FOVChange;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -56,9 +58,10 @@ public class Hypothermia extends IClientStatusEffect {
         //ClientUtils.client().interactionManager.
     }
     boolean freezable() {
-        //String i = ((ItemStack) ((ArrayList) ClientUtils.e().getItemsHand()).get(0)).getTranslationKey();
-        String i = ClientUtils.client().player.inventory.getStack(this.lockedSlot).getTranslationKey();
-        return (!i.contains("air")&&!i.contains("lava")&&!i.contains("magma"));
+        Item i = ClientUtils.client().player.inventory.getStack(this.lockedSlot).getItem();
+        return !(ClientUtils.client().player.inventory.getStack(this.lockedSlot).isEmpty() || i.equals(Items.LAVA_BUCKET) || i.equals(Items.MAGMA_BLOCK)
+                || i.equals(Items.MAGMA_CREAM) || i.equals(Items.CAMPFIRE)
+                || i.equals(Items.SOUL_CAMPFIRE) || i.equals(Items.FIRE_CHARGE));
     }
     @Override
     public DefaultParticleType particleType() {
